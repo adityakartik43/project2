@@ -20,7 +20,7 @@ router.get(
 
 router.get(
   "/auth/google/callback",
-  passport.authenticate("google", { session: true }),
+  passport.authenticate("google", { session: false }),
   googleCallback
 );
 

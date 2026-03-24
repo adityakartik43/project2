@@ -2,6 +2,10 @@ import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import pool from "./db.js";
 
+// /api/google -> passport.authenticate("google")
+// api/v1/users/auth/google/callback
+// done(null, existingUser) => req.user: null => (req, res)
+
 passport.use(
   new GoogleStrategy(
     {
@@ -38,18 +42,5 @@ passport.use(
   )
 );
 
-// We use JWT (stateless), so we only need minimal session support for the OAuth handshake
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
-
-passport.deserializeUser(async (id, done) => {
-  try {
-    const result = await pool.query("SELECT * FROM users WHERE id = $1", [id]);
-    done(null, result.rows[0] || null);
-  } catch (err) {
-    done(err, null);
-  }
-});
 
 export default passport;
