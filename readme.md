@@ -27,7 +27,7 @@ Welcome to the Society Pro Management System! This is a comprehensive full-stack
 **Backend Server:** Node.js with Express
 **Database:** PostgreSQL (with `pg` package)
 **Authentication:** JWT, Passport.js (Google OAuth 2.0), bcrypt
-**Security & Utility:** CORS, cookie-parser
+**Security & Utility:** CORS
 
 ## 📂 Project Structure
 

@@ -61,8 +61,7 @@ export default function ResidentSubscriptionsList() {
               </h1>
             </div>
             <p className="text-slate-500 text-base max-w-xl font-medium">
-              View your past maintenance bills. Click on any month to see a
-              detailed breakdown of the charges and download your receipt.
+              View your past maintenance bills.
             </p>
           </div>
         </div>
@@ -129,11 +128,6 @@ export default function ResidentSubscriptionsList() {
 
                       <td className="px-10 py-6 text-right">
                         <div className="flex items-center justify-end gap-3">
-                          {record.status === "PAID" && (
-                            <button className="text-slate-400 hover:text-[#5842F4] transition-all p-2 rounded-xl hover:bg-white border border-transparent hover:border-slate-100 hidden md:flex items-center justify-center">
-                              <Download size={18} />
-                            </button>
-                          )}
                           <Link href={`/resident/subscriptions/${record.id}`} className="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 px-5 py-2.5 rounded-xl text-xs font-bold hover:bg-slate-50 hover:border-slate-400 transition-all shadow-sm group-hover:shadow-indigo-100">
                             View Details <ChevronRight size={14} className="text-slate-400 group-hover:translate-x-0.5 transition-transform" />
                           </Link>
